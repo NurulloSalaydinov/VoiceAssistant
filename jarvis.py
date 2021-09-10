@@ -57,13 +57,12 @@ def sendEmail(to, content):
     server.login('your email', 'your password')
     server.sendmail('your email', to, content)
     server.close()
-x = True
 
 if __name__ == "__main__":
     
     wishMe()
     
-    while x:
+    while True:
         query = takeCommand().lower()
         speak("What do you need again sir")
         # Logic for executing tasks based on query
@@ -102,3 +101,5 @@ if __name__ == "__main__":
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
             speak(f"Sir, the time is {strTime}")
             print(f'the time is {strTime}')
+        elif 'stop' in query:
+            break
